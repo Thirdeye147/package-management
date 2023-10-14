@@ -124,6 +124,8 @@ systemctl enable kubelet.service
 ## Initialised the control plane in the master node as the root user.
 ``` sh
 # Initialize Kubernetes control plane by running the below commond as root user.
+sudo vi /etc/containerd/config.toml #comment disabled_plugins = ["cri"] 
+sudo systemctl restart containerd
 sudo kubeadm init
 ```
 
